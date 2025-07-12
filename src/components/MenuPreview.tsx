@@ -48,9 +48,10 @@ const MenuSection: React.FC<MenuSectionProps> = ({
     return () => window.removeEventListener('scroll', handleScroll);
   }, [onScroll]);
 
-  // Split images into left and right columns
-  const leftColumn = images.filter((_, i) => i % 2 === 0);
-  const rightColumn = images.filter((_, i) => i % 2 === 1);
+  // Split images into left and right columns for desktop
+  // On mobile, we'll show all images in a single column
+  const leftColumn = isMobile ? images : images.filter((_, i) => i % 2 === 0);
+  const rightColumn = isMobile ? [] : images.filter((_, i) => i % 2 === 1);
 
   return (
     <div 
@@ -82,7 +83,7 @@ const MenuSection: React.FC<MenuSectionProps> = ({
                     className="w-full h-full object-cover"
                   />
                 </div>
-                <p className="mt-4 md:mt-8 text-sm font-medium text-foreground text-center md:text-left" style={{ fontFamily: 'TAN PEARL, serif' }}>
+                <p className="mt-4 md:mt-8 text-sm font-medium text-yellow-400 text-center md:text-left" style={{ fontFamily: 'TAN PEARL, serif' }}>
                   {image.caption}
                 </p>
               </div>
@@ -90,7 +91,7 @@ const MenuSection: React.FC<MenuSectionProps> = ({
           </div>
           
           {/* Right Column - Hidden on mobile, shown on desktop */}
-          <div className="hidden md:block space-y-80 pt-80">
+          <div className={`${isMobile ? 'hidden' : 'block'} space-y-80 pt-80`}>
             {rightColumn.map((image, index) => (
               <div 
                 key={index * 2 + 1}
@@ -108,7 +109,7 @@ const MenuSection: React.FC<MenuSectionProps> = ({
                     className="w-full h-full object-cover"
                   />
                 </div>
-                <p className="mt-8 text-sm font-medium text-foreground text-left" style={{ fontFamily: 'TAN PEARL, serif' }}>
+                <p className="mt-8 text-sm font-medium text-left" style={{ fontFamily: 'TAN PEARL, serif', color: '#F9C704' }}>
                   {image.caption}
                 </p>
               </div>
@@ -150,7 +151,7 @@ const MenuPreview = () => {
           caption: "UOVA IN COCOTTA"
         }
       ],
-      backgroundColor: "#ECE5D6"
+      backgroundColor: "#191102"
     },
     {
       title: "LUNCH",
@@ -172,7 +173,7 @@ const MenuPreview = () => {
           caption: "BRESAOLA RUCOLA"
         }
       ],
-      backgroundColor: "rgba(189, 232, 220, 0.35)"
+      backgroundColor: "#191102"
     },
     {
       title: "DINNER",
@@ -194,7 +195,7 @@ const MenuPreview = () => {
           caption: "TIRAMISU"
         }
       ],
-      backgroundColor: "rgba(200, 150, 130, 0.4)"
+      backgroundColor: "#191102"
     }
   ];
 
@@ -286,12 +287,22 @@ const MenuPreview = () => {
       let opacity = 1;
       
       // Get the menu section element
-      const menuSection = document.getElementById('menu');
+      const menuSectionEl = document.getElementById('menu');
       
-      if (menuSection) {
-        const menuRect = menuSection.getBoundingClientRect();
+      if (menuSectionEl) {
+        const menuRect = menuSectionEl.getBoundingClientRect();
         const viewportHeight = window.innerHeight;
         const isMobile = viewportWidth < 768; // Assuming 768px as the breakpoint for mobile
+        
+        // Check if we're scrolling into the main menu section
+        const menuTop = menuRect.top + window.scrollY;
+        const scrollPosition = window.scrollY + (window.innerHeight * 0.2); // 20% down the viewport
+        
+        // If we're scrolling into the menu section, force opacity to 0
+        if (scrollPosition > menuTop) {
+          setHeadingOpacity(0);
+          return;
+        }
         
         // Adjust fade out behavior based on device type
         if (isMobile) {
@@ -312,6 +323,21 @@ const MenuPreview = () => {
             const scrollProgress = Math.min(1, Math.max(0, (currentScrollY - fadeStart) / (fadeEnd - fadeStart)));
             opacity = 1 - scrollProgress;
           }
+        }
+      }
+      
+      // Get the menu section's position relative to viewport
+      const menuSection = document.getElementById('menu');
+      
+      if (menuSection) {
+        const menuRect = menuSection.getBoundingClientRect();
+        const menuTop = menuRect.top + window.scrollY;
+        const scrollPosition = window.scrollY + (window.innerHeight * 0.8); // 80% down the viewport
+        
+        // If we're scrolling into the menu section, force opacity to 0
+        if (scrollPosition > menuTop) {
+          setHeadingOpacity(0);
+          return;
         }
       }
       
@@ -416,7 +442,7 @@ const MenuPreview = () => {
         `
       }} />
       
-      <div className="relative z-0 py-64">
+      <div className="relative z-0 py-64" style={{ backgroundColor: '#191102' }}>
         {/* Add extra space before the first section */}
         <div className="h-[50vh] w-full" />
         
@@ -426,7 +452,7 @@ const MenuPreview = () => {
               title={section.title}
               images={section.images}
               isActive={currentSection === index}
-              backgroundColor="transparent"
+              backgroundColor="#191102"
               onScroll={(progress) => handleSectionScroll(index, progress)}
             />
             {/* Add generous space between sections */}
@@ -438,8 +464,8 @@ const MenuPreview = () => {
         
         {/* Gradient transition to menu section */}
         <div className="relative h-[100vh] w-full">
-          <div className="absolute bottom-0 left-0 right-0 h-[200px] bg-gradient-to-t from-[#ece6db] to-transparent z-10" />
-          <div className="h-full w-full bg-[#ece6db]" />
+          <div className="absolute bottom-0 left-0 right-0 h-[200px] bg-gradient-to-t from-[#000411] to-transparent z-10" />
+          <div className="h-full w-full bg-[#000411]" />
         </div>
       </div>
     </div>

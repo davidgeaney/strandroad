@@ -98,7 +98,7 @@ const HamburgerMenu = ({ isOpen, onClose }: HamburgerMenuProps) => {
           <motion.div 
             className="fixed inset-0"
             style={{ 
-              backgroundColor: '#ece6db',
+              backgroundColor: '#191102',
               zIndex: 50
             }}
             initial={{ clipPath: 'circle(0% at 0% 0%)' }}
@@ -112,7 +112,7 @@ const HamburgerMenu = ({ isOpen, onClose }: HamburgerMenuProps) => {
             }}
           >
             <div className="h-screen w-full flex flex-col pl-12 pr-8 py-8" style={{ 
-              backgroundColor: '#ece6db',
+              backgroundColor: '#191102',
               position: 'relative',
               zIndex: 51
             }}>
@@ -124,7 +124,7 @@ const HamburgerMenu = ({ isOpen, onClose }: HamburgerMenuProps) => {
                 transition={{ duration: 0.3 }}
                 aria-label="Close menu"
               >
-                <X className="w-10 h-10 text-[#222]" />
+                <X className="w-10 h-10 text-[#F9C704]" />
               </motion.button>
               
               {/* Menu Items with staggered animation */}
@@ -150,8 +150,14 @@ const HamburgerMenu = ({ isOpen, onClose }: HamburgerMenuProps) => {
                         e.preventDefault();
                         handleLinkClick(item.href);
                       }}
-                      className="text-[#22222] text-5xl md:text-7xl font-medium tracking-tight leading-none hover:opacity-80 transition-opacity block pl-10"
-                      style={{ fontFamily: 'TAN PEARL, serif' }}
+                      className="text-5xl md:text-7xl font-medium tracking-tight leading-none block pl-10"
+                      style={{ 
+                        fontFamily: 'TAN PEARL, serif',
+                        color: '#FEFCFB',
+                        transition: 'color 0.3s ease',
+                      }}
+                      onMouseOver={(e) => (e.currentTarget.style.color = '#F9C704')}
+                      onMouseOut={(e) => (e.currentTarget.style.color = '#FEFCFB')}
                     >
                       {item.name}
                     </a>

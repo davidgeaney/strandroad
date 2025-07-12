@@ -25,29 +25,29 @@ const ContactPage = () => {
   };
 
   return (
-    <div className="h-screen bg-[#ece6db] flex flex-col overflow-hidden">
+    <div className="h-screen bg-[#02040F] flex flex-col overflow-hidden">
       {/* Header */}
-      <header className="bg-[#ece6db] border-b border-gray-300">
+      <header className="bg-[#02040F] border-b border-gray-700">
         <div className="container mx-auto px-6 py-4">
           <div className="flex items-center justify-between">
             {/* Logo */}
-            <Link to="/" className="text-2xl font-serif text-gray-800 hover:text-gray-600 transition-colors">
+            <Link to="/" className="text-2xl font-serif text-yellow-400 hover:text-yellow-300 transition-colors">
               STRAND ROAD
             </Link>
 
             {/* Navigation */}
             <nav className="flex items-center gap-8">
-              <Link to="/" className="text-gray-700 hover:text-gray-900">
+              <Link to="/" className="text-white hover:text-yellow-400 transition-colors">
                 Home
               </Link>
-              <Link to="/menu" className="text-gray-700 hover:text-gray-900">
+              <Link to="/menu" className="text-white hover:text-yellow-400 transition-colors">
                 Menu
               </Link>
-              <span className="text-gray-900 font-medium">Contact</span>
+              <span className="text-yellow-400 font-medium">Contact</span>
             </nav>
 
             {/* Reserve Button */}
-            <button className="bg-black text-white px-6 py-2 rounded">
+            <button className="bg-yellow-400 hover:bg-yellow-500 text-black px-6 py-2 rounded transition-colors">
               Reserve
             </button>
           </div>
@@ -57,7 +57,7 @@ const ContactPage = () => {
       {/* Main Content */}
       <div className="flex-1 flex overflow-y-auto">
         {/* Left Side - Contact Form */}
-        <div className="w-full md:w-1/2 bg-[#ece6db] p-6 md:p-12 flex flex-col justify-between">
+        <div className="w-full md:w-1/2 bg-[#02040F] p-6 md:p-12 flex flex-col justify-between">
           <div>
             <form onSubmit={handleSubmit} className="space-y-6">
               {/* First Name */}
@@ -71,7 +71,7 @@ const ContactPage = () => {
                   value={formData.firstName}
                   onChange={handleInputChange}
                   placeholder="Your name"
-                  className="w-full px-4 py-3 bg-transparent border border-gray-400 rounded-none focus:outline-none focus:border-gray-600 text-gray-800"
+                  className="w-full px-4 py-3 bg-transparent border border-gray-600 rounded-none focus:outline-none focus:border-yellow-400 text-white placeholder-gray-400"
                 />
               </div>
 
@@ -86,7 +86,7 @@ const ContactPage = () => {
                   value={formData.lastName}
                   onChange={handleInputChange}
                   placeholder="Your last name"
-                  className="w-full px-4 py-3 bg-transparent border border-gray-400 rounded-none focus:outline-none focus:border-gray-600 text-gray-800"
+                  className="w-full px-4 py-3 bg-transparent border border-gray-600 rounded-none focus:outline-none focus:border-yellow-400 text-white placeholder-gray-400"
                 />
               </div>
 
@@ -101,7 +101,7 @@ const ContactPage = () => {
                   value={formData.email}
                   onChange={handleInputChange}
                   placeholder="your.email@example.com"
-                  className="w-full px-4 py-3 bg-transparent border border-gray-400 rounded-none focus:outline-none focus:border-gray-600 text-gray-800"
+                  className="w-full px-4 py-3 bg-transparent border border-gray-600 rounded-none focus:outline-none focus:border-yellow-400 text-white placeholder-gray-400"
                 />
               </div>
 
@@ -116,14 +116,14 @@ const ContactPage = () => {
                   onChange={handleInputChange}
                   placeholder="Your message"
                   rows={4}
-                  className="w-full px-4 py-3 bg-transparent border border-gray-400 rounded-none focus:outline-none focus:border-gray-600 text-gray-800 resize-none"
+                  className="w-full px-4 py-3 bg-transparent border border-gray-600 rounded-none focus:outline-none focus:border-yellow-400 text-white placeholder-gray-400 resize-none"
                 />
               </div>
 
               {/* Submit Button */}
               <button
                 type="submit"
-                className="w-full bg-black text-white py-4 px-6 hover:bg-gray-800 transition-colors font-medium tracking-wider"
+                className="w-full bg-yellow-400 text-black py-4 px-6 hover:bg-yellow-500 transition-colors font-medium tracking-wider"
               >
                 SEND MESSAGE
               </button>
@@ -132,7 +132,7 @@ const ContactPage = () => {
 
           {/* Copyright */}
           <div className="mt-12">
-            <p className="text-xs font-mono tracking-wider text-gray-600"> 2024 STRAND ROAD. ALL RIGHTS RESERVED.</p>
+            <p className="text-xs font-mono tracking-wider text-gray-400"> 2024 STRAND ROAD. ALL RIGHTS RESERVED.</p>
           </div>
         </div>
 

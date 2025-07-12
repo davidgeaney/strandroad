@@ -5,21 +5,6 @@ import { Button } from "@/components/ui/button";
 import { Menu, X } from "lucide-react";
 import HamburgerMenu from "./HamburgerMenu";
 
-// Star icon component
-const StarIcon = ({ className = "" }) => (
-  <svg 
-    xmlns="http://www.w3.org/2000/svg" 
-    viewBox="0 0 24 24" 
-    fill="currentColor" 
-    className={`w-4 h-4 ${className}`}
-  >
-    <path 
-      fillRule="evenodd" 
-      d="M10.788 3.21c.448-1.077 1.976-1.077 2.424 0l2.082 5.007 5.404.433c1.164.093 1.636 1.545.749 2.305l-4.117 3.527 1.257 5.273c.271 1.136-.964 2.033-1.96 1.425L12 18.354 7.373 21.18c-.996.608-2.231-.29-1.96-1.425l1.257-5.273-4.117-3.527c-.887-.76-.415-2.212.749-2.305l5.404-.433 2.082-5.006z" 
-      clipRule="evenodd" 
-    />
-  </svg>
-);
 
 const Hero = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -78,7 +63,7 @@ const Hero = () => {
   }, [isMenuOpen]);
 
   return (
-    <section id="hero" className="relative w-full" style={{ backgroundColor: '#ece6db' }}>
+    <section id="hero" className="relative w-full" style={{ backgroundColor: '#191102' }}>
       {/* Navigation */}
       <nav 
         ref={navRef}
@@ -95,25 +80,25 @@ const Hero = () => {
             aria-label={isMenuOpen ? 'Close menu' : 'Open menu'}
           >
             {isMenuOpen ? (
-              <X className="w-7 h-7 text-black" />
+              <X className="w-7 h-7" style={{ color: '#F6F6F6' }} />
             ) : (
-              <Menu className="w-7 h-7 text-black group-hover:opacity-80 transition-opacity" />
+              <Menu className="w-7 h-7 group-hover:opacity-80 transition-opacity" style={{ color: '#F6F6F6' }} />
             )}
           </button>
 
-          {/* Star Button - Visible on mobile */}
-          <button 
-            onClick={scrollToTop}
-            className="md:hidden flex items-center justify-center w-10 h-10 transition-colors duration-200"
-            aria-label="Scroll to top"
-          >
-            <StarIcon className="text-black" />
-          </button>
         </div>
         
         <div className="flex items-center">
           {/* Reserve Button */}
-          <button className="bg-black text-white px-6 py-2 rounded">
+          <button 
+            className="px-8 py-3 rounded-md font-medium transition-opacity duration-300"
+            style={{ 
+              backgroundColor: '#F9C704',
+              color: '#000',
+            }}
+            onMouseOver={(e) => e.currentTarget.style.opacity = '0.85'}
+            onMouseOut={(e) => e.currentTarget.style.opacity = '1'}
+          >
             Reserve
           </button>
         </div>
@@ -123,30 +108,79 @@ const Hero = () => {
       <div className="pt-24 md:pt-32 pb-8 md:pb-16 px-4 md:px-8 max-w-7xl mx-auto">
         {/* Large Heading with Custom Typewriter Animation */}
         <div className="text-center mb-8 md:mb-12 relative py-6 -mt-6">
-          <div className="font-tanpearl text-5xl sm:text-6xl md:text-[120px] leading-[0.95] text-[#222222] font-normal tracking-tight relative z-10" style={{ fontFamily: 'TAN PEARL, serif' }}>
-            {'STRAND ROAD'.split('').map((char, i) => (
-              <motion.span
-                key={i}
-                className="inline-block relative"
-                initial={{ opacity: 0, y: 30 }}
-                animate={{
-                  opacity: 1,
-                  y: 0,
-                  transition: {
-                    type: 'spring',
-                    damping: 15,
-                    stiffness: 200,
-                    delay: 0.8 + (i * 0.05),
-                    duration: 0.8
-                  }
-                }}
-              >
-                {char === ' ' ? '\u00A0' : char}
-              </motion.span>
-            ))}
-          </div>
+          <div className="font-tanpearl text-5xl sm:text-6xl md:text-[120px] leading-[0.95] text-[#F9C704] font-normal tracking-tight relative z-10" style={{ fontFamily: 'TAN PEARL, serif' }}>
+            {/* First line: STRAND */}
+            <div className="block md:hidden">
+              {'STRAND'.split('').map((char, i) => (
+                <motion.span
+                  key={`strand-${i}`}
+                  className="inline-block relative"
+                  initial={{ opacity: 0, y: 30 }}
+                  animate={{
+                    opacity: 1,
+                    y: 0,
+                    transition: {
+                      type: 'spring',
+                      damping: 15,
+                      stiffness: 200,
+                      delay: 0.8 + (i * 0.05),
+                      duration: 0.8
+                    }
+                  }}
+                >
+                  {char}
+                </motion.span>
+              ))}
+            </div>
+            {/* Second line: ROAD (mobile) */}
+            <div className="block md:hidden mt-2">
+              {'ROAD'.split('').map((char, i) => (
+                <motion.span
+                  key={`road-${i}`}
+                  className="inline-block relative"
+                  initial={{ opacity: 0, y: 30 }}
+                  animate={{
+                    opacity: 1,
+                    y: 0,
+                    transition: {
+                      type: 'spring',
+                      damping: 15,
+                      stiffness: 200,
+                      delay: 1.1 + (i * 0.05),
+                      duration: 0.8
+                    }
+                  }}
+                >
+                  {char}
+                </motion.span>
+              ))}
+            </div>
+            {/* Full text for desktop */}
+            <div className="hidden md:block">
+              {'STRAND ROAD'.split('').map((char, i) => (
+                <motion.span
+                  key={`desktop-${i}`}
+                  className="inline-block relative"
+                  initial={{ opacity: 0, y: 30 }}
+                  animate={{
+                    opacity: 1,
+                    y: 0,
+                    transition: {
+                      type: 'spring',
+                      damping: 15,
+                      stiffness: 200,
+                      delay: 0.8 + (i * 0.05),
+                      duration: 0.8
+                    }
+                  }}
+                >
+                  {char === ' ' ? '\u00A0' : char}
+                </motion.span>
+              ))}
+            </div>
           {/* Invisible spacer to prevent layout shift */}
           <div className="invisible h-0 md:h-0">STRAND ROAD</div>
+          </div>
         </div>
         
         {/* Hero Image with Unique Animation */}

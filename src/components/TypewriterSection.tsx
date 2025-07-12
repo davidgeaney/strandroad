@@ -37,7 +37,7 @@ const TypewriterText = ({ text, delay = 0, className = "" }: { text: string; del
     <motion.span 
       ref={ref}
       className={`font-tanpearl ${className}`}
-      style={{ fontFamily: 'TAN PEARL, serif' }}
+      style={{ fontFamily: 'TAN PEARL, serif', color: '#F9C704' }}
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       transition={{ duration: 0.5 }}
@@ -68,7 +68,7 @@ const textVariants = {
 const AboutOurRestaurant = () => {
   return (
     <>
-      <section className="py-20 md:py-32 px-4" style={{ backgroundColor: '#ece6db' }}>
+      <section className="py-20 md:py-32 px-4" style={{ backgroundColor: '#191102' }}>
         <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-start gap-12 px-4 md:px-8">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -77,10 +77,10 @@ const AboutOurRestaurant = () => {
             transition={{ duration: 0.5 }}
             className="w-full md:w-1/2 lg:w-2/5"
           >
-            <div className="font-tanpearl text-3xl md:text-5xl lg:text-6xl leading-none text-[#222222] tracking-tight">
+            <div className="font-tanpearl text-3xl md:text-5xl lg:text-6xl text-[#F9C704] tracking-tight" style={{ lineHeight: '1.1' }}>
               <TypewriterText 
                 text={"ABOUT OUR\nRESTAURANT"}
-                className="block text-left"
+                className="block text-left [&>br]:block [&>br]:h-2 text-[#F9C704]"
               />
             </div>
           </motion.div>
@@ -92,7 +92,7 @@ const AboutOurRestaurant = () => {
             style={{
               fontFamily: "Inter, sans-serif",
               fontSize: "1.2rem",
-              color: "#222222",
+              color: "#EDEDF4",
               width: '100%',
               maxWidth: '550px',
               lineHeight: 1.7,
@@ -107,7 +107,7 @@ const AboutOurRestaurant = () => {
       <div
         style={{
           width: "100%",
-          background: "#ece6db",
+          background: "#02040F",
           display: "flex",
           justifyContent: "center",
           padding: "0 0 48px 0"
@@ -118,7 +118,7 @@ const AboutOurRestaurant = () => {
             width: "100%",
             maxWidth: "77.25rem", /* 1236px - matches hero image width */
             aspectRatio: "16/9",
-            background: "#ece6db", // Match page background color
+            background: "#02040F", // Match page background color
             borderRadius: 0,
             overflow: "hidden",
             position: "relative"
@@ -140,7 +140,7 @@ const AboutOurRestaurant = () => {
             style={{ 
               width: '100%', 
               height: '100%',
-              backgroundColor: '#ece6db', // Match page background color
+              backgroundColor: '#191102', // Match page background color
               position: 'relative',
               zIndex: 1,
               transform: 'translate3d(0,0,0)' // Force hardware acceleration for smoother animation
@@ -160,7 +160,7 @@ const AboutOurRestaurant = () => {
         </div>
       </div>
       {/* ABOUT OUR VALUES Section */}
-      <section className="py-20 md:py-32 px-4" style={{ backgroundColor: '#ece6db' }}>
+      <section className="py-20 md:py-32 px-4" style={{ backgroundColor: '#191102' }}>
         <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-start gap-12 px-4 md:px-8">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -169,10 +169,10 @@ const AboutOurRestaurant = () => {
             transition={{ duration: 0.5 }}
             className="w-full md:w-1/2 lg:w-2/5"
           >
-            <div className="font-tanpearl text-3xl md:text-5xl lg:text-6xl leading-none text-[#222222] tracking-tight">
+            <div className="font-tanpearl text-3xl md:text-5xl lg:text-6xl text-yellow-400 tracking-tight" style={{ lineHeight: '1.1' }}>
               <TypewriterText 
                 text={"ABOUT OUR\nVALUES"}
-                className="block text-left"
+                className="block text-left [&>br]:block [&>br]:h-2"
               />
             </div>
           </motion.div>
@@ -184,7 +184,7 @@ const AboutOurRestaurant = () => {
             style={{
               fontFamily: "Inter, sans-serif",
               fontSize: "1.2rem",
-              color: "#222222",
+              color: "#FEFCFB",
               width: '100%',
               maxWidth: '550px',
               lineHeight: 1.7,
@@ -215,7 +215,7 @@ const AboutOurRestaurant = () => {
             viewport={{ once: true, margin: "-50px 0px" }}
           >
             <img
-              src="/images/strandourvaluesimg1.jpg"
+              src="/images/strandourvaluesimg3.jpg"
               alt="Italian Restaurant Window"
               className="w-full h-[300px] md:h-[600px] object-cover shadow-2xl"
             />

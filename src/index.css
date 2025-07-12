@@ -1,9 +1,201 @@
-
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap');
-
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+
+:root {
+  /* Core Color Palette */
+  --color-dark: #001514;     /* Rich dark teal/black - Primary background */
+  --color-gold: #F9C704;     /* Vibrant gold - Primary action color */
+  --color-light: #FBFFFE;    /* Crisp off-white - Text and accents */
+  
+  /* Theme Configuration */
+  --radius: 0.5rem;         /* Border radius for UI elements */
+  
+  /* Animation */
+  --transition-default: all 0.2s ease-in-out;
+}
+
+/* Base Styles */
+body {
+  background-color: #001514;
+  color: #FBFFFE;
+  min-height: 100vh;
+  font-family: 'Inter', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Typography */
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'TAN PEARL', serif;
+  font-weight: 700;
+  letter-spacing: -0.025em;
+  line-height: 1.2;
+  margin-bottom: 0.75em;
+}
+
+h1 { font-size: 2.25rem; }
+h2 { font-size: 1.875rem; }
+h3 { font-size: 1.5rem; }
+
+/* Links */
+a {
+  color: #F9C704;
+  text-decoration: none;
+  transition: color 0.2s ease-in-out;
+}
+
+a:hover {
+  color: rgba(249, 199, 4, 0.8);
+}
+
+/* Buttons */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 0.75rem 1.5rem;
+  border-radius: 9999px;
+  font-weight: 500;
+  transition: all 0.2s ease-in-out;
+  cursor: pointer;
+  border: none;
+  font-size: 1rem;
+  line-height: 1.5;
+}
+
+.btn-primary {
+  background-color: #F9C704;
+  color: #001514;
+}
+
+.btn-primary:hover {
+  background-color: rgba(249, 199, 4, 0.9);
+}
+
+.btn-secondary {
+  background-color: #FBFFFE;
+  color: #001514;
+}
+
+.btn-secondary:hover {
+  background-color: rgba(251, 255, 254, 0.9);
+}
+
+.btn-outline {
+  border: 1px solid #F9C704;
+  color: #F9C704;
+  background: transparent;
+}
+
+.btn-outline:hover {
+  background-color: rgba(249, 199, 4, 0.1);
+}
+
+/* Form Elements */
+input,
+textarea,
+select {
+  display: block;
+  width: 100%;
+  padding: 0.5rem 1rem;
+  background-color: rgba(0, 21, 20, 0.5);
+  border: 1px solid rgba(249, 199, 4, 0.2);
+  border-radius: 0.5rem;
+  color: #FBFFFE;
+  transition: all 0.2s ease-in-out;
+}
+
+input:focus,
+textarea:focus,
+select:focus {
+  outline: none;
+  border-color: rgba(249, 199, 4, 0.5);
+  box-shadow: 0 0 0 2px rgba(249, 199, 4, 0.25);
+}
+
+input::placeholder,
+textarea::placeholder {
+  color: rgba(251, 255, 254, 0.5);
+}
+
+/* Cards */
+.card {
+  background-color: rgba(0, 21, 20, 0.7);
+  backdrop-filter: blur(4px);
+  border: 1px solid rgba(249, 199, 4, 0.1);
+  border-radius: 1rem;
+  padding: 1.5rem;
+  transition: all 0.3s ease-in-out;
+}
+
+.card:hover {
+  border-color: rgba(249, 199, 4, 0.3);
+  box-shadow: 0 10px 15px -3px rgba(249, 199, 4, 0.05);
+}
+
+/* Utility Classes */
+.text-gradient {
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+  background-image: linear-gradient(to right, #F9C704, rgba(249, 199, 4, 0.8));
+}
+
+.section-padding {
+  padding: 4rem 0;
+}
+
+.container {
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  max-width: 80rem;
+}
+
+/* Responsive Design */
+@media (min-width: 640px) {
+  .container {
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+  }
+  
+  .section-padding {
+    padding: 6rem 0;
+  }
+  
+  h1 { font-size: 3rem; }
+  h2 { font-size: 2.25rem; }
+  h3 { font-size: 1.875rem; }
+}
+
+@media (min-width: 1024px) {
+  .container {
+    padding-left: 2rem;
+    padding-right: 2rem;
+  }
+  
+  .section-padding {
+    padding: 8rem 0;
+  }
+  
+  h1 { font-size: 3.75rem; }
+}
+
+/* Custom Animations */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.animate-fade-in {
+  animation: fadeIn 0.5s ease-out forwards;
+}
 
 /* Custom Font Faces */
 @font-face {
@@ -55,14 +247,14 @@
 
 @layer base {
   :root {
-    --background: #E6E6E6;
-    --foreground: #39393A;
-    --card: #E6E6E6;
-    --card-foreground: #39393A;
-    --popover: #E6E6E6;
-    --popover-foreground: #39393A;
+    --background: #02040F;
+    --foreground: #FEFCFB;
+    --card: #02040F;
+    --card-foreground: #FEFCFB;
+    --popover: #02040F;
+    --popover-foreground: #FEFCFB;
     --primary: #FF7B7A;
-    --primary-foreground: #FFFFFF;
+    --primary-foreground: #FEFCFB;
     --secondary: 210 40% 96.1%;
     --secondary-foreground: 222.2 47.4% 11.2%;
     --muted: 210 40% 96.1%;
@@ -84,7 +276,8 @@
   }
   
   body {
-    @apply bg-gray-200 text-gray-800;
+    background-color: #02040F;
+    color: #FEFCFB;
   }
   
   html {

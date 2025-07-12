@@ -19,53 +19,73 @@ export default {
 			}
 		},
 		fontFamily: {
+			tan: ['TAN PEARL', 'serif'],
 			sans: ['Inter', 'sans-serif'],
+			serif: ['TAN PEARL', 'serif'],
+			mono: ['RM Mono', 'monospace'],
 			'tan-pearl': ['TAN PEARL', 'serif'],
-			playfair: ['Playfair Display', 'serif'],
-			'rm-mono': ['RM Mono', 'monospace'],
+			'rm-mono': ['RM Mono', 'monospace']
 		},
 		extend: {
 			colors: {
-				border: 'hsl(var(--border))',
-				input: 'hsl(var(--input))',
-				ring: 'hsl(var(--ring))',
-				background: {
-				  DEFAULT: '#ece6db',
-				},
-				foreground: '#39393A',
-				primary: {
-					DEFAULT: '#FF7B7A',
-					foreground: '#FFFFFF'
-				},
-				secondary: {
-					DEFAULT: 'hsl(var(--secondary))',
-					foreground: 'hsl(var(--secondary-foreground))'
-				},
-				destructive: {
-					DEFAULT: 'hsl(var(--destructive))',
-					foreground: 'hsl(var(--destructive-foreground))'
-				},
-				muted: {
-					DEFAULT: 'hsl(var(--muted))',
-					foreground: 'hsl(var(--muted-foreground))'
-				},
-				accent: {
-					DEFAULT: 'hsl(var(--accent))',
-					foreground: 'hsl(var(--accent-foreground))'
-				},
-				popover: {
-					DEFAULT: 'hsl(var(--popover))',
-					foreground: 'hsl(var(--popover-foreground))'
-				},
-				card: {
-					DEFAULT: 'hsl(var(--card))',
-					foreground: 'hsl(var(--card-foreground))'
-				},
-				gold: {
-					breakfast: 'rgba(255, 123, 122, 0.35)',
-					lunch: 'rgba(189, 232, 220, 0.35)',
-					dinner: 'rgba(188, 215, 218, 0.35)'
-				}
+			  // Base colors
+			  dark: '#001514',
+			  gold: '#F9C704',
+			  light: '#FBFFFE',
+			  
+			  // Theme colors
+			  background: {
+			    DEFAULT: '#001514',
+			    dark: '#000D0D',
+			    light: '#FBFFFE',
+			  },
+			  
+			  // Text colors
+			  foreground: '#FBFFFE',
+			  muted: 'rgba(251, 255, 254, 0.7)',
+			  
+			  // Primary colors (Gold)
+			  primary: {
+			    DEFAULT: '#F9C704',
+			    foreground: '#001514',
+			    hover: '#E6B800',
+			  },
+			  
+			  // Secondary colors (Light)
+			  secondary: {
+			    DEFAULT: '#FBFFFE',
+			    foreground: '#001514',
+			    hover: '#E6E8E8',
+			  },
+			  
+			  // Accent colors (Dark)
+			  accent: {
+			    DEFAULT: '#001514',
+			    foreground: '#FBFFFE',
+			    light: '#0D2A2A',
+			  },
+			  
+			  // Border colors
+			  border: 'rgba(249, 199, 4, 0.2)',
+			  input: 'rgba(249, 199, 4, 0.3)',
+			  ring: '#F9C704',
+			  
+			  // Cards
+			  card: {
+			    DEFAULT: 'rgba(0, 21, 20, 0.7)',
+			    foreground: '#FBFFFE',
+			    highlight: 'rgba(0, 21, 20, 0.9)',
+			  },
+			  
+			  // Status colors
+			  destructive: {
+			    DEFAULT: '#FF4D4D',
+			    foreground: '#FBFFFE'
+			  },
+			  success: {
+			    DEFAULT: '#4CAF50',
+			    foreground: '#FBFFFE'
+			  },
 			},
 			fontFamily: {
 				'tan-pearl': ['TAN PEARL', 'serif'],
