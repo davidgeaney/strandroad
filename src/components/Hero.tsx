@@ -63,7 +63,7 @@ const Hero = () => {
   }, [isMenuOpen]);
 
   return (
-    <section id="hero" className="relative w-full" style={{ backgroundColor: '#191102' }}>
+    <section id="hero" className="relative w-full" style={{ backgroundColor: '#001514' }}>
       {/* Navigation */}
       <nav 
         ref={navRef}

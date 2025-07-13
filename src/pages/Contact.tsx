@@ -25,9 +25,9 @@ const ContactPage = () => {
   };
 
   return (
-    <div className="h-screen bg-[#02040F] flex flex-col overflow-hidden">
+    <div className="h-screen flex flex-col overflow-hidden" style={{ backgroundColor: '#001514' }}>
       {/* Header */}
-      <header className="bg-[#02040F] border-b border-gray-700">
+      <header className="border-b border-gray-700 flex-shrink-0" style={{ backgroundColor: '#001514' }}>
         <div className="container mx-auto px-6 py-4">
           <div className="flex items-center justify-between">
             {/* Logo */}
@@ -35,8 +35,8 @@ const ContactPage = () => {
               STRAND ROAD
             </Link>
 
-            {/* Navigation */}
-            <nav className="flex items-center gap-8">
+            {/* Navigation - Hidden on mobile, shown on md and up */}
+            <nav className="hidden md:flex items-center gap-8">
               <Link to="/" className="text-white hover:text-yellow-400 transition-colors">
                 Home
               </Link>
@@ -45,6 +45,9 @@ const ContactPage = () => {
               </Link>
               <span className="text-yellow-400 font-medium">Contact</span>
             </nav>
+            
+            {/* Spacer for mobile to push reserve button to the right */}
+            <div className="md:hidden flex-1"></div>
 
             {/* Reserve Button */}
             <button className="bg-yellow-400 hover:bg-yellow-500 text-black px-6 py-2 rounded transition-colors">
@@ -55,11 +58,11 @@ const ContactPage = () => {
       </header>
 
       {/* Main Content */}
-      <div className="flex-1 flex overflow-y-auto">
+      <div className="flex-1 flex flex-col md:flex-row overflow-hidden">
         {/* Left Side - Contact Form */}
-        <div className="w-full md:w-1/2 bg-[#02040F] p-6 md:p-12 flex flex-col justify-between">
-          <div>
-            <form onSubmit={handleSubmit} className="space-y-6">
+        <div className="w-full md:w-1/2 bg-[#02040F] p-6 md:p-12 overflow-hidden">
+          <div className="h-full flex flex-col">
+            <form onSubmit={handleSubmit} className="space-y-4 flex-1 flex flex-col">
               {/* First Name */}
               <div>
                 <label className="block text-xs font-semibold tracking-widest text-gray-600 mb-2 uppercase">
@@ -121,12 +124,14 @@ const ContactPage = () => {
               </div>
 
               {/* Submit Button */}
-              <button
-                type="submit"
-                className="w-full bg-yellow-400 text-black py-4 px-6 hover:bg-yellow-500 transition-colors font-medium tracking-wider"
-              >
-                SEND MESSAGE
-              </button>
+              <div className="mt-6">
+                <button
+                  type="submit"
+                  className="w-full bg-yellow-400 text-black py-3 px-6 hover:bg-yellow-500 transition-colors font-medium tracking-wider"
+                >
+                  SEND MESSAGE
+                </button>
+              </div>
             </form>
           </div>
 
@@ -139,7 +144,7 @@ const ContactPage = () => {
         {/* Right Side - Restaurant Image */}
         <div className="hidden md:block w-1/2 relative">
           <div 
-            className="absolute inset-0 bg-cover bg-center" 
+            className="absolute inset-0 bg-cover bg-center h-full" 
             style={{ backgroundImage: "url('/images/strandcontactimg.jpg')" }}
           >
             <div className="absolute inset-0 bg-black bg-opacity-40"></div>

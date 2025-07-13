@@ -125,7 +125,7 @@ const MenuPreview = () => {
   const [currentSection, setCurrentSection] = useState(0);
   const [prevSection, setPrevSection] = useState(0);
   const [isAnimating, setIsAnimating] = useState(false);
-  const [backgroundStyle, setBackgroundStyle] = useState({});
+  const [backgroundStyle, setBackgroundStyle] = useState({ backgroundColor: '#001514' });
   const [hasAnimatedIn, setHasAnimatedIn] = useState([false, false, false]);
   const sectionRef = useRef<HTMLDivElement>(null);
   const animationTimeoutRef = useRef<NodeJS.Timeout>();
@@ -151,7 +151,7 @@ const MenuPreview = () => {
           caption: "UOVA IN COCOTTA"
         }
       ],
-      backgroundColor: "#191102"
+      backgroundColor: "#001514"
     },
     {
       title: "LUNCH",
@@ -173,7 +173,7 @@ const MenuPreview = () => {
           caption: "BRESAOLA RUCOLA"
         }
       ],
-      backgroundColor: "#191102"
+      backgroundColor: "#001514"
     },
     {
       title: "DINNER",
@@ -195,7 +195,7 @@ const MenuPreview = () => {
           caption: "TIRAMISU"
         }
       ],
-      backgroundColor: "#191102"
+      backgroundColor: "#001514"
     }
   ];
 
@@ -442,7 +442,7 @@ const MenuPreview = () => {
         `
       }} />
       
-      <div className="relative z-0 py-64" style={{ backgroundColor: '#191102' }}>
+      <div className="relative z-0 py-64" style={{ backgroundColor: '#001514' }}>
         {/* Add extra space before the first section */}
         <div className="h-[50vh] w-full" />
         
@@ -452,7 +452,7 @@ const MenuPreview = () => {
               title={section.title}
               images={section.images}
               isActive={currentSection === index}
-              backgroundColor="#191102"
+              backgroundColor="#001514"
               onScroll={(progress) => handleSectionScroll(index, progress)}
             />
             {/* Add generous space between sections */}
@@ -464,8 +464,8 @@ const MenuPreview = () => {
         
         {/* Gradient transition to menu section */}
         <div className="relative h-[100vh] w-full">
-          <div className="absolute bottom-0 left-0 right-0 h-[200px] bg-gradient-to-t from-[#000411] to-transparent z-10" />
-          <div className="h-full w-full bg-[#000411]" />
+          <div className="absolute bottom-0 left-0 right-0 h-[200px] bg-gradient-to-t from-[#001514] to-transparent z-10" />
+          <div className="h-full w-full bg-[#001514]" />
         </div>
       </div>
     </div>

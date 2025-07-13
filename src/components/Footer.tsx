@@ -3,20 +3,23 @@ import { Link } from "react-router-dom"
 
 const Footer = () => {
   return (
-    <footer className="relative bg-[#02040F]" style={{ color: '#FEFCFB' }}>
-      {/* Decorative line */}
-      <div className="absolute top-0 left-0 right-0 h-px bg-black"></div>
+    <footer className="relative" style={{ backgroundColor: '#001514', color: '#FEFCFB' }}>
+      {/* Top decorative line - hidden on mobile */}
+      <div className="hidden md:block absolute top-0 left-0 right-0 h-px bg-white bg-opacity-30"></div>
+      
+      {/* Full width white line - hidden on mobile */}
+      <div className="hidden md:block w-full h-px bg-white bg-opacity-30"></div>
       
       {/* Main content section */}
       <div className="container mx-auto">
-        <div className="grid grid-cols-1 lg:grid-cols-3 divide-x divide-black">
+        <div className="grid grid-cols-1 lg:grid-cols-3 lg:divide-x lg:divide-white lg:divide-opacity-30">
           {/* Column 1 - Menu */}
           <div className="px-12 py-12">
             <h3 className="text-xs font-semibold tracking-widest mb-6 uppercase" style={{ color: '#F9C704' }}>MENU</h3>
             <div className="flex flex-col space-y-3">
               <div className="group relative inline-block">
                 <Link to="/menu" className="relative inline-block pb-1 group">
-                  <h4 className="text-4xl font-serif leading-tight transition-colors duration-200" style={{ color: '#FEFCFB' }}>
+                  <h4 className="text-4xl font-serif font-medium leading-tight transition-colors duration-200" style={{ color: '#FEFCFB' }}>
                     Menu
                   </h4>
                   <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-gold group-hover:w-full transition-all duration-300 ease-out"></span>
@@ -24,7 +27,7 @@ const Footer = () => {
               </div>
               <div className="group relative inline-block">
                 <Link to="/drinks" className="relative inline-block pb-1 group">
-                  <h4 className="text-4xl font-serif leading-tight transition-colors duration-200" style={{ color: '#FEFCFB' }}>
+                  <h4 className="text-4xl font-serif font-medium leading-tight transition-colors duration-200" style={{ color: '#FEFCFB' }}>
                     Drinks menu
                   </h4>
                   <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-gold group-hover:w-full transition-all duration-300 ease-out"></span>
@@ -32,7 +35,7 @@ const Footer = () => {
               </div>
               <div className="group relative inline-block">
                 <Link to="/wine" className="relative inline-block pb-1 group">
-                  <h4 className="text-4xl font-serif leading-tight transition-colors duration-200" style={{ color: '#FEFCFB' }}>
+                  <h4 className="text-4xl font-serif font-medium leading-tight transition-colors duration-200" style={{ color: '#FEFCFB' }}>
                     Wine list
                   </h4>
                   <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-gold group-hover:w-full transition-all duration-300 ease-out"></span>
@@ -45,6 +48,7 @@ const Footer = () => {
           <div className="px-12 py-12 space-y-8">
             {/* Reserve */}
             <div>
+  
               <h3 className="text-xs font-semibold tracking-widest mb-4 uppercase" style={{ color: '#F9C704' }}>RESERVE</h3>
               <div className="space-y-2">
                 <a href="#" className="block hover:opacity-80 transition-opacity" style={{ color: '#FEFCFB' }}>
@@ -153,11 +157,11 @@ const Footer = () => {
       </div>
 
       {/* Bottom aligned rectangles section */}
-      <div className="border-t border-black">
+      <div className="border-t border-white border-opacity-30">
         <div className="container mx-auto">
-          <div className="grid grid-cols-1 lg:grid-cols-3 divide-x divide-black">
-            {/* Reviews */}
-            <div className="px-12 py-4">
+          <div className="grid grid-cols-1 lg:grid-cols-3 lg:divide-x lg:divide-white lg:divide-opacity-30">
+            {/* Reviews - Hidden on mobile */}
+            <div className="px-12 py-4 hidden lg:block">
               <div className="flex items-center gap-2">
                 <div className="flex">
                   {[...Array(5)].map((_, i) => (
@@ -168,8 +172,8 @@ const Footer = () => {
               </div>
             </div>
 
-            {/* Copyright */}
-            <div className="px-12 py-4">
+            {/* Copyright - Hidden on mobile */}
+            <div className="px-12 py-4 hidden lg:block">
               <div className="text-start">
                 <span className="text-sm font-mono tracking-wider whitespace-nowrap" style={{ color: '#EDEDF4' }}>
                   ©2025 STRAND ROAD. ALL RIGHTS RESERVED.
@@ -177,8 +181,8 @@ const Footer = () => {
               </div>
             </div>
 
-            {/* Social Links */}
-            <div className="px-12 py-4">
+            {/* Social Links - Hidden on mobile */}
+            <div className="px-12 py-4 hidden lg:block">
               <div className="flex justify-start gap-6">
                 <a href="https://www.instagram.com/thestrandroadbarandkitchen/?hl=en" className="hover:opacity-80 transition-opacity" style={{ color: '#EDEDF4' }}>
                   Instagram
@@ -218,12 +222,15 @@ const Footer = () => {
         <div className="absolute bottom-0 left-0 right-0 p-6">
           <div className="container mx-auto">
             <div className="grid grid-cols-1 md:grid-cols-3 gap-4 items-center">
-              <div className="flex items-center gap-4">
+              {/* Copyright - Hidden on mobile */}
+              <div className="hidden md:flex items-center gap-4">
                 <span className="font-mono text-sm tracking-wider" style={{ color: '#EDEDF4' }}>
                   ©2025 STRAND ROAD. ALL RIGHTS RESERVED.
                 </span>
               </div>
-              <div className="text-center">
+              
+              {/* Social Links - Hidden on mobile */}
+              <div className="hidden md:block text-center">
                 <div className="space-x-2">
                   <a href="https://www.instagram.com/thestrandroadbarandkitchen/?hl=en" className="hover:text-gray-300 font-mono text-sm tracking-wider" style={{ color: '#EDEDF4' }}>INSTAGRAM</a>
                   <span className="text-[#FEFCFB]">, </span>
@@ -232,7 +239,9 @@ const Footer = () => {
                   <a href="https://www.tiktok.com/@strandroad" className="hover:text-gray-300 font-mono text-sm tracking-wider" style={{ color: '#EDEDF4' }}>TIKTOK</a>
                 </div>
               </div>
-              <div className="text-right">
+              
+              {/* Made By Geaney - Always visible */}
+              <div className="text-center md:text-right">
                 <span className="font-mono text-sm tracking-wider" style={{ color: '#EDEDF4' }}>MADE BY GEANEY</span>
               </div>
             </div>

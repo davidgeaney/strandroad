@@ -19,197 +19,197 @@ const Menu = () => {
       {
         id: "frutta-mista",
         name: "Crispy Chicken Wings",
-        image: "public/images/menu2/starters/fullirish.jpg"
+        image: "/images/menu2/starters/fullirish.jpg"
       },
       {
         id: "cornetto-senape",
         name: "Sticky Korean Fried Chicken",
-        image: "public/images/menu2/starters/fullirish.jpg"
+        image: "/images/menu2/starters/fullirish.jpg"
       },
       {
         id: "salt-chicken",
         name: "Strand Road Salt & Chilli Chicken",
-        image: "public/images/menu2/starters/fullirish.jpg"
+        image: "/images/menu2/starters/fullirish.jpg"
       },
       {
         id: "soup-bread",
         name: "Soup of the Day & Brown Bread",
-        image: "public/images/menu2/starters/fullirish.jpg"
+        image: "/images/menu2/starters/fullirish.jpg"
       },
       {
         id: "king-prawns",
         name: "King Prawns",
-        image: "public/images/menu2/starters/fullirish.jpg"
+        image: "/images/menu2/starters/fullirish.jpg"
       },
       {
         id: "beef-nachos",
         name: "Chilli Beef Nachos",
-        image: "public/images/menu2/starters/fullirish.jpg"
+        image: "/images/menu2/starters/fullirish.jpg"
       },
       {
         id: "cauliflower-wings",
         name: "Crispy Tempura Buffalo Cauliflower Wings",
-        image: "public/images/menu2/starters/fullirish.jpg"
+        image: "/images/menu2/starters/fullirish.jpg"
       },
       {
         id: "cheesy-garlic-bread",
         name: "Cheesy Garlic Bread",
-        image: "public/images/menu2/starters/fullirish.jpg"
+        image: "/images/menu2/starters/fullirish.jpg"
       },
       {
         id: "strand-road-tacos",
         name: "Strand Road Tacos",
-        image: "public/images/menu2/starters/fullirish.jpg"
+        image: "/images/menu2/starters/fullirish.jpg"
       },
     ],
     MAINS: [
       {
         id: "margherita",
         name: "Surf & Turf",
-        image: "public/images/menu2/mains/10oz-steak.webp"
+        image: "/images/menu2/mains/10oz-steak.webp"
       },
       {
         id: "quattro-stagioni",
         name: "10oz Irish Nature Sirloin Steak",
-        image: "public/images/menu2/mains/10oz-steak.webp"
+        image: "/images/menu2/mains/10oz-steak.webp"
       },
       {
         id: "diavola",
         name: "Pan Fried Chicken Supreme",
-        image: "public/images/menu2/mains/10oz-steak.webp"
+        image: "/images/menu2/mains/10oz-steak.webp"
       },
       {
         id: "capricciosa",
         name: "Beef Batter Killybegs Cod Fillet",
-        image: "public/images/menu2/mains/10oz-steak.webp"
+        image: "/images/menu2/mains/10oz-steak.webp"
       },
       {
         id: "marinara",
         name: "Strand Road Seafood Linguine",
-        image: "public/images/menu2/mains/10oz-steak.webp"
+        image: "/images/menu2/mains/10oz-steak.webp"
       },
     ],
     'FROM THE GARDEN': [
       {
         id: "garden-salad-1",
         name: "Superfood Salad",
-        image: "public/images/menu2/fromthegarden/fromthegarden1.jpg"
+        image: "/images/menu2/fromthegarden/fromthegarden1.jpg"
       },
       {
         id: "garden-salad-2",
         name: "Chicken or King Prawn Caesar Salad",
-        image: "public/images/menu2/fromthegarden/fromthegarden1.jpg"
+        image: "/images/menu2/fromthegarden/fromthegarden1.jpg"
       },
       {
         id: "garden-salad-3",
         name: "Couscous Salad",
-        image: "public/images/menu2/fromthegarden/fromthegarden1.jpg"
+        image: "/images/menu2/fromthegarden/fromthegarden1.jpg"
       },
     ],
     BURGERS: [
       {
         id: "classic-burger",
         name: "Strand Road Loaded 8oz Irish Beef Burger",
-        image: "public/images/menu2/burgers/burger1.jpg"
+        image: "/images/menu2/burgers/burger1.jpg"
       },
       {
         id: "veggie-burger",
         name: "Plain Jane",
-        image: "public/images/menu2/burgers/burger1.jpg"
+        image: "/images/menu2/burgers/burger1.jpg"
       },
       {
         id: "sloppy-joe-burger",
         name: "Sloppy Joe",
-        image: "public/images/menu2/burgers/burger1.jpg"
+        image: "/images/menu2/burgers/burger1.jpg"
       },
       {
         id: "buffalo-chicken-burger",
         name: "Crispy Buffalo Fried Chicken Burger",
-        image: "public/images/menu2/burgers/burger1.jpg"
+        image: "/images/menu2/burgers/burger1.jpg"
       },
       {
         id: "southern-chicken-burger",
         name: "Southern Fried Chicken Burger",
-        image: "public/images/menu2/burgers/burger1.jpg"
+        image: "/images/menu2/burgers/burger1.jpg"
       },
       {
         id: "grilled-chicken-burger",
         name: "Plain Grilled Chicken Burger",
-        image: "public/images/menu2/burgers/burger1.jpg"
+        image: "/images/menu2/burgers/burger1.jpg"
       },
     ],
     SIDES: [
       {
         id: "garlic-fries",
         name: "Skinny Fries",
-        image: "public/images/menu2/sides/skinnyfries.jpg"
+        image: "/images/menu2/sides/skinnyfries.jpg"
       },
       {
         id: "onion-rings",
         name: "Garlic Potatoes",
-        image: "public/images/menu2/sides/skinnyfries.jpg"
+        image: "/images/menu2/sides/skinnyfries.jpg"
       },
       {
         id: "mash-potatoes",
         name: "Mash",
-        image: "public/images/menu2/sides/skinnyfries.jpg"
+        image: "/images/menu2/sides/skinnyfries.jpg"
       },
       {
         id: "chunky-chips",
         name: "Chunky Chips",
-        image: "public/images/menu2/sides/skinnyfries.jpg"
+        image: "/images/menu2/sides/skinnyfries.jpg"
       },
       {
         id: "house-salad",
         name: "House Salad",
-        image: "public/images/menu2/sides/skinnyfries.jpg"
+        image: "/images/menu2/sides/skinnyfries.jpg"
       },
       {
         id: "coleslaw-side",
         name: "Coleslaw",
-        image: "public/images/menu2/sides/skinnyfries.jpg"
+        image: "/images/menu2/sides/skinnyfries.jpg"
       },
       {
         id: "onion-rings-side",
         name: "Onion Rings",
-        image: "public/images/menu2/sides/skinnyfries.jpg"
+        image: "/images/menu2/sides/skinnyfries.jpg"
       },
     ],
     SWEETS: [
       {
         id: "chocolate-lava",
         name: "Strand Road Chocolate Fantasy",
-        image: "public/images/menu2/sweets/sweets1.jpg"
+        image: "/images/menu2/sweets/sweets1.jpg"
       },
       {
         id: "cheesecake",
         name: "Cheesecake of the Day",
-        image: "public/images/menu2/sweets/sweets1.jpg"
+        image: "/images/menu2/sweets/sweets1.jpg"
       },
       {
         id: "double-chocolate-brownie",
         name: "Double Chocolate Brownie",
-        image: "public/images/menu2/sweets/sweets1.jpg"
+        image: "/images/menu2/sweets/sweets1.jpg"
       },
       {
         id: "sticky-toffee-pudding",
         name: "Sticky Toffee Pudding",
-        image: "public/images/menu2/sweets/sweets1.jpg"
+        image: "/images/menu2/sweets/sweets1.jpg"
       },
       {
         id: "apple-crumble",
         name: "Apple Crumble",
-        image: "public/images/menu2/sweets/sweets1.jpg"
+        image: "/images/menu2/sweets/sweets1.jpg"
       },
       {
         id: "baileys-brownie",
         name: "Baileys Over Brownie",
-        image: "public/images/menu2/sweets/sweets1.jpg"
+        image: "/images/menu2/sweets/sweets1.jpg"
       },
       {
         id: "ice-cream-selection",
         name: "Selection of Ice Cream",
-        image: "public/images/menu2/sweets/sweets1.jpg"
+        image: "/images/menu2/sweets/sweets1.jpg"
       },
     ],
     DESSERTS: [
@@ -233,67 +233,67 @@ const Menu = () => {
       {
         id: "negroni",
         name: "Tea",
-        image: "public/images/menu2/drinks/drinks1.jpg"
+        image: "/images/menu2/drinks/drinks1.jpg"
       },
       {
         id: "aperol-spritz",
         name: "Herbal Tea",
-        image: "public/images/menu2/drinks/drinks1.jpg"
+        image: "/images/menu2/drinks/drinks1.jpg"
       },
       {
         id: "bellini",
         name: "Americano",
-        image: "public/images/menu2/drinks/drinks1.jpg"
+        image: "/images/menu2/drinks/drinks1.jpg"
       },
       {
         id: "espresso-martini",
         name: "Cappuccino",
-        image: "public/images/menu2/drinks/drinks1.jpg"
+        image: "/images/menu2/drinks/drinks1.jpg"
       },
       {
         id: "limoncello",
         name: "Latte",
-        image: "public/images/menu2/drinks/drinks1.jpg"
+        image: "/images/menu2/drinks/drinks1.jpg"
       },
       {
         id: "flat-white-coffee",
         name: "Flat White",
-        image: "public/images/menu2/drinks/drinks1.jpg"
+        image: "/images/menu2/drinks/drinks1.jpg"
       },
       {
         id: "espresso-coffee",
         name: "Espresso",
-        image: "public/images/menu2/drinks/drinks1.jpg"
+        image: "/images/menu2/drinks/drinks1.jpg"
       },
       {
         id: "espresso-doppio",
         name: "Espresso Doppio",
-        image: "public/images/menu2/drinks/drinks1.jpg"
+        image: "/images/menu2/drinks/drinks1.jpg"
       },
       {
         id: "hot-chocolate",
         name: "Hot Chocolate",
-        image: "public/images/menu2/drinks/drinks1.jpg"
+        image: "/images/menu2/drinks/drinks1.jpg"
       },
       {
         id: "hot-chocolate-marshmallows",
         name: "Hot Chocolate & Marshmallows",
-        image: "public/images/menu2/drinks/drinks1.jpg"
+        image: "/images/menu2/drinks/drinks1.jpg"
       },
       {
         id: "irish-coffee",
         name: "Irish Coffee",
-        image: "public/images/menu2/drinks/drinks1.jpg"
+        image: "/images/menu2/drinks/drinks1.jpg"
       },
       {
         id: "french-coffee",
         name: "French Coffee",
-        image: "public/images/menu2/drinks/drinks1.jpg"
+        image: "/images/menu2/drinks/drinks1.jpg"
       },
       {
         id: "baileys-coffee",
         name: "Baileys Coffee",
-        image: "public/images/menu2/drinks/drinks1.jpg"
+        image: "/images/menu2/drinks/drinks1.jpg"
       },
       {
         id: "chianti-classico",
@@ -340,7 +340,7 @@ const Menu = () => {
   };
 
   return (
-    <section id="menu" ref={menuRef} className="py-8 sm:py-12 md:py-16 lg:py-24 px-4 md:px-8 relative" style={{ backgroundColor: '#191102' }}>
+    <section id="menu" ref={menuRef} className="py-8 sm:py-12 md:py-16 lg:py-24 px-4 md:px-8 relative" style={{ backgroundColor: '#001514' }}>
       <div className="max-w-7xl mx-auto px-4 md:px-6">
         {/* Filter Tags - Responsive */}
         <div className="flex flex-wrap gap-2 sm:gap-3 md:gap-4 mb-6 sm:mb-10 md:mb-14 relative z-50">
@@ -429,6 +429,9 @@ const Menu = () => {
                 height: 'min(90vh, 400px)',
                 transform: 'none',
                 transformOrigin: 'top left',
+                backgroundColor: '#001514',
+                padding: '8px',
+                borderRadius: '12px'
               }}
               initial={{ opacity: 0, scale: 0.95 }}
               animate={{ 
@@ -478,11 +481,13 @@ const Menu = () => {
       <AnimatePresence>
         {selectedItem && isMobile && (
           <motion.div 
-            className="fixed inset-0 bg-black/90 z-50 flex items-center justify-center p-4"
+            className="fixed inset-0 z-50 flex items-center justify-center p-4"
+            style={{ backgroundColor: '#001514EE' }}
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
             transition={{ duration: 0.2, ease: "easeInOut" }}
+            onClick={closePopup}
           >
             <motion.div 
               className="relative bg-black/80 backdrop-blur-sm rounded-2xl overflow-hidden w-full max-w-[280px] shadow-2xl"

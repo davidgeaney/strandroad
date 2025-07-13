@@ -2,6 +2,7 @@
 import { useState, useEffect, useRef } from "react";
 import { X } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
+import { Link } from "react-router-dom";
 
 interface HamburgerMenuProps {
   isOpen: boolean;
@@ -63,10 +64,9 @@ const HamburgerMenu = ({ isOpen, onClose }: HamburgerMenuProps) => {
   ];
 
   const handleLinkClick = (href: string) => {
-    onClose();
-    
     if (href.startsWith('#')) {
       // For internal page anchors
+      onClose();
       const element = document.querySelector(href);
       if (element) {
         element.scrollIntoView({ 
@@ -74,20 +74,17 @@ const HamburgerMenu = ({ isOpen, onClose }: HamburgerMenuProps) => {
           block: 'start'
         });
       }
-    } else {
-      // For external links
-      window.location.href = href;
-    }
-    
-    // Close the menu
-    const timer = setTimeout(() => {
-      if (href.startsWith('#')) {
-        // Small delay to ensure smooth scroll completes before hiding menu
+      
+      // Close the menu after scroll
+      const timer = setTimeout(() => {
         onClose();
-      }
-    }, 300);
-    
-    return () => clearTimeout(timer);
+      }, 300);
+      
+      return () => clearTimeout(timer);
+    }
+    // For React Router links, just close the menu
+    // The actual navigation will be handled by the Link component
+    onClose();
   };
 
   return (
@@ -144,23 +141,40 @@ const HamburgerMenu = ({ isOpen, onClose }: HamburgerMenuProps) => {
                       ease: [0.22, 1, 0.36, 1]
                     }}
                   >
-                    <a
-                      href={item.href}
-                      onClick={(e) => {
-                        e.preventDefault();
-                        handleLinkClick(item.href);
-                      }}
-                      className="text-5xl md:text-7xl font-medium tracking-tight leading-none block pl-10"
-                      style={{ 
-                        fontFamily: 'TAN PEARL, serif',
-                        color: '#FEFCFB',
-                        transition: 'color 0.3s ease',
-                      }}
-                      onMouseOver={(e) => (e.currentTarget.style.color = '#F9C704')}
-                      onMouseOut={(e) => (e.currentTarget.style.color = '#FEFCFB')}
-                    >
-                      {item.name}
-                    </a>
+                    {item.href.startsWith('/') ? (
+                      <Link
+                        to={item.href}
+                        onClick={() => handleLinkClick(item.href)}
+                        className="text-5xl md:text-7xl font-medium tracking-tight leading-none block pl-10"
+                        style={{ 
+                          fontFamily: 'TAN PEARL, serif',
+                          color: '#FEFCFB',
+                          transition: 'color 0.3s ease',
+                        }}
+                        onMouseOver={(e) => (e.currentTarget.style.color = '#F9C704')}
+                        onMouseOut={(e) => (e.currentTarget.style.color = '#FEFCFB')}
+                      >
+                        {item.name}
+                      </Link>
+                    ) : (
+                      <a
+                        href={item.href}
+                        onClick={(e) => {
+                          e.preventDefault();
+                          handleLinkClick(item.href);
+                        }}
+                        className="text-5xl md:text-7xl font-medium tracking-tight leading-none block pl-10"
+                        style={{ 
+                          fontFamily: 'TAN PEARL, serif',
+                          color: '#FEFCFB',
+                          transition: 'color 0.3s ease',
+                        }}
+                        onMouseOver={(e) => (e.currentTarget.style.color = '#F9C704')}
+                        onMouseOut={(e) => (e.currentTarget.style.color = '#FEFCFB')}
+                      >
+                        {item.name}
+                      </a>
+                    )}
                   </motion.div>
                 ))}
               </div>

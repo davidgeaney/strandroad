@@ -68,7 +68,7 @@ const textVariants = {
 const AboutOurRestaurant = () => {
   return (
     <>
-      <section className="py-20 md:py-32 px-4" style={{ backgroundColor: '#191102' }}>
+      <section className="py-20 md:py-32 px-4" style={{ backgroundColor: '#001514' }}>
         <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-start gap-12 px-4 md:px-8">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -107,7 +107,7 @@ const AboutOurRestaurant = () => {
       <div
         style={{
           width: "100%",
-          background: "#02040F",
+          backgroundColor: "#001514",
           display: "flex",
           justifyContent: "center",
           padding: "0 0 48px 0"
@@ -118,7 +118,7 @@ const AboutOurRestaurant = () => {
             width: "100%",
             maxWidth: "77.25rem", /* 1236px - matches hero image width */
             aspectRatio: "16/9",
-            background: "#02040F", // Match page background color
+            backgroundColor: "#001514", // Match page background color
             borderRadius: 0,
             overflow: "hidden",
             position: "relative"
@@ -140,7 +140,7 @@ const AboutOurRestaurant = () => {
             style={{ 
               width: '100%', 
               height: '100%',
-              backgroundColor: '#191102', // Match page background color
+              backgroundColor: '#001514', // Match page background color
               position: 'relative',
               zIndex: 1,
               transform: 'translate3d(0,0,0)' // Force hardware acceleration for smoother animation
@@ -160,7 +160,7 @@ const AboutOurRestaurant = () => {
         </div>
       </div>
       {/* ABOUT OUR VALUES Section */}
-      <section className="py-20 md:py-32 px-4" style={{ backgroundColor: '#191102' }}>
+      <section className="py-20 md:py-32 px-4" style={{ backgroundColor: '#001514' }}>
         <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-start gap-12 px-4 md:px-8">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
